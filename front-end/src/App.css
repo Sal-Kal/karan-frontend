@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.app {
+    width: min(95%, 1400px);
+    margin-inline: auto;
+    margin-block: 0;
+    position: relative;;
+}
+
+.header-body {
+    display: flex;
+    margin-inline: auto;
+    height: 10rem;
+    width: 100%;
+    margin-block: 1rem;
+    background-color: bisque;
+    border: 2px solid black;
+    border-radius: 1rem;
+    justify-content: space-evenly;
+}
+
+.header-logo {
+    height: 70%;
+    width: 7rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid black;
+    margin-block: auto;
+    margin-inline: auto;
+}
+
+.header-button-area {
+    height: 80%;
+    width: 80%;
+    border-radius: 1rem;
+    margin-block: auto;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 300ms;
+}
+
+.watch-button {
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    width: 7.5rem;
+    height: 3.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 0;
+    transition-duration: 300ms;
+    transform: translateY(100%);
+}
+
+.watch-button:hover {
+    background-color: black;
+    color: white;
+    /* transform: translateY(3rem); */
+}
+
+.header-button-area:hover > .watch-button {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.notification-body {
+    width: 100%;
+    border-radius: 12px;
+    margin-block: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.notification {
+    width: 90%;
+    height: 5rem;
+    margin-inline: auto;
+    margin-block: 1rem;
+    border: 2px dashed black;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade-in 1s;
+}
+
+.clear-button {
+    width: 10%;
+    height: 3rem;
+    margin-inline: auto;
+    margin-block: 1rem;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: bisque;
+    cursor: pointer;
+    position: fixed;
+    bottom: 2rem;
+}
+
+.notify-button {
+    width: 10%;
+    height: 3rem;
+    margin-inline: auto;
+    margin-block: 1rem;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: bisque;
+    cursor: pointer;
+    position: fixed;
+    bottom: 6rem;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
