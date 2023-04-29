@@ -61,7 +61,6 @@
 .watch-button:hover {
     background-color: black;
     color: white;
-    /* transform: translateY(3rem); */
 }
 
 .header-button-area:hover > .watch-button {
@@ -92,7 +91,7 @@
 }
 
 .clear-button {
-    width: 10%;
+    width: 20%;
     height: 3rem;
     margin-inline: auto;
     margin-block: 1rem;
@@ -102,19 +101,6 @@
     cursor: pointer;
     position: fixed;
     bottom: 2rem;
-}
-
-.notify-button {
-    width: 10%;
-    height: 3rem;
-    margin-inline: auto;
-    margin-block: 1rem;
-    border: 2px solid black;
-    border-radius: 12px;
-    background-color: bisque;
-    cursor: pointer;
-    position: fixed;
-    bottom: 6rem;
 }
 
 @keyframes fade-in {
