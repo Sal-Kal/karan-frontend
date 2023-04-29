@@ -16,6 +16,4 @@
 
 - ## Once the backend server is running, use the command the following to send notifications to the frontend.
 
-```
-python notify.py
-```
+## `python notify.py`
