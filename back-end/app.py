@@ -1,6 +1,7 @@
 #!/home/sal/Codes/gits/karan-frontend/back-end/back-env/bin/python
 from flask import Flask, jsonify
 from flask_cors import CORS
+from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
@@ -19,7 +20,8 @@ def get_notification():
 
 @app.route("/add/notifications")
 def add_notification():
-    notifications.append('BENKI 🔥')
+    now = datetime.now()
+    notifications.append('TIGER DETECTED '+now.strftime("%m/%d/%Y, %H:%M:%S"))
     return jsonify("Notified")
 
 if __name__ == '__main__':

@@ -29,12 +29,15 @@
     background-color: white;
     border: 2px solid black;
     margin-block: auto;
-    margin-inline: auto;
+    margin-inline: 1rem;
+    object-fit: cover;
+    cursor: pointer;
 }
 
 .header-button-area {
     height: 80%;
     width: 80%;
+    /* border: 2px dashed black; */
     border-radius: 1rem;
     margin-block: auto;
     margin-inline: auto;
@@ -42,6 +45,16 @@
     justify-content: center;
     align-items: center;
     transition-duration: 300ms;
+}
+
+.header-name-area {
+    height: 15%;
+    width: 20%;
+    /* border: 2px dashed black; */
+    text-align: center;
+    position: relative;
+    top: 8rem;
+    right: 5rem;
 }
 
 .watch-button {
@@ -80,8 +93,9 @@
     width: 90%;
     height: 5rem;
     margin-inline: auto;
+    background-color: bisque;
     margin-block: 1rem;
-    border: 2px dashed black;
+    border: 2px solid black;
     border-radius: 12px;
     text-align: center;
     display: flex;
@@ -102,6 +116,7 @@
     position: fixed;
     bottom: 2rem;
 }
+
 
 @keyframes fade-in {
     from {
