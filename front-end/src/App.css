@@ -7,7 +7,8 @@
     width: min(95%, 1400px);
     margin-inline: auto;
     margin-block: 0;
-    position: relative;;
+    position: relative;
+    ;
 }
 
 .header-body {
@@ -76,7 +77,7 @@
     color: white;
 }
 
-.header-button-area:hover > .watch-button {
+.header-button-area:hover>.watch-button {
     opacity: 1;
     transform: translateY(0%);
 }
@@ -101,7 +102,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fade-in 1s;
+    animation: fade-in 0.3s forwards;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.notification[closed] {
+    display: block;
+    pointer-events: none;
+    inset: 0;
+    animation: fade-out 0.4s forwards;
 }
 
 .clear-button {
@@ -117,13 +127,136 @@
     bottom: 2rem;
 }
 
+.popup-wrapper {
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
 
-@keyframes fade-in {
+.close-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 44rem;
+}
+
+.popup-image {
+    height: 40rem;
+    border-radius: 10px;
+    animation: pop-in 0.4s forwards;
+    border: 2px solid black;
+}
+
+.popup-image[closed] {
+    display: block;
+    pointer-events: none;
+    inset: 0;
+    animation: pop-out 0.4s forwards;
+}
+
+.close-popup {
+    border-radius: 1rem;
+    border-width: 0;
+    width: 2rem;
+    height: 2rem;
+    animation: pop-in 0.4s forwards;
+    cursor: pointer;
+}
+
+.close-popup[closed] {
+    display: block;
+    pointer-events: none;
+    inset: 0;
+    animation: pop-out 0.4s forwards;
+}
+
+.faded-background {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.7;
+    animation: background-fade-in 0.2s forwards;
+}
+
+.faded-background[closed] {
+    display: block;
+    pointer-events: none;
+    inset: 0;
+    animation: background-fade-out 0.2s forwards;
+}
+@keyframes background-fade-in {
     from {
         opacity: 0;
     }
 
     to {
+        opacity: 0.7;
+    }
+}
+
+@keyframes background-fade-out {
+    from {
+        opacity: 0.7;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
         opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes pop-in {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pop-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(100%);
     }
 }

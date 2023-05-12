@@ -1,5 +1,5 @@
 #!/home/sal/Codes/gits/karan-frontend/back-end/back-env/bin/python
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from datetime import datetime
 
@@ -18,10 +18,13 @@ def get_notification():
         notifications.clear()
         return jsonify(response)
 
-@app.route("/add/notifications")
+@app.route("/add/notifications", methods = ['POST'])
 def add_notification():
     now = datetime.now()
-    notifications.append('TIGER DETECTED '+now.strftime("%m/%d/%Y, %H:%M:%S"))
+    response = {}
+    response["dateTime"] = now.strftime("%m/%d/%Y, %H:%M:%S")
+    response["image"] = request.json["image"]
+    notifications.append(response)
     return jsonify("Notified")
 
 if __name__ == '__main__':
